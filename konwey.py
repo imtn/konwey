@@ -10,7 +10,7 @@ print_queue = queue.Queue() #a queue of tuples, where a tuple consists of final 
 global commands = ['x=x+1','x=x+2','x=x-1']
 seed = [1];
 
-class live (threading.Thread):
+class live(threading.Thread):
 
     def __init__(self, threads_queue, kon):
         threading.Thread.__init__(self)
@@ -53,8 +53,3 @@ def edit_kon(kon):
 
 if __name__ == "__main__":
     procreate()
-
-    #bias
-    value = random.uniform(0, 4)
-    value = math.sqrt(value)
-    value /= 2
