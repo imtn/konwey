@@ -10,8 +10,6 @@ print_queue = queue.Queue() #a queue of tuples, where a tuple consists of final 
 global commands = ['x=x+1','x=x+2','x=x-1']
 seed = [1];
 
-#TODO implement every kon as a deque instead to be able to delete commands from inside a kon
-
 class live (threading.Thread):
 
     def __init__(self, threads_queue, kon):
@@ -49,11 +47,12 @@ def edit_kon(kon):
             new_kon[line] = random.randint(0, len(commands)-1)
     elif (choice < 79): #delete
         for _ in range(lines):
-
+            del new_kon[random.randint(0, len(new_kon))]
 
     return new_kon
 
-procreate()
+if __name__ == "__main__":
+    procreate()
 
     #bias
     value = random.uniform(0, 4)
