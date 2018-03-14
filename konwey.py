@@ -8,7 +8,7 @@ import random
 print_queue = queue.Queue() #a queue of tuples, where a tuple consists of final x, and the associated kon
 #in left, out right
 commands = ['x=x+1','x=x+2','x=x-1']
-seed = [0];
+seed = [1]; #kon to start with
 
 class live(threading.Thread):
 
@@ -35,7 +35,10 @@ def procreate():
             new_x, kon = print_queue.get()
             if new_x > 0:
                 for __ in range(new_x):
-                    kon_queue.append(mutate(kon))
+                    temp_kon = mutate(kon)
+                    # if len(temp_kon) <= 1:
+                    #     continue
+                    kon_queue.append(temp_kon)
             print("X: " + str(new_x) + " - KON: " + str(kon))
     #run new kon
 
