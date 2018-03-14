@@ -10,7 +10,7 @@ print_queue = queue.Queue() #a queue of tuples, where a tuple consists of final 
 commands = ['x=x+1','x=x+2','x=x-1']
 seed = [0];
 
-class live (threading.Thread):
+class live(threading.Thread):
 
     def __init__(self, threads_queue, kon):
         threading.Thread.__init__(self)
