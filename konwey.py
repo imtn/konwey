@@ -52,14 +52,14 @@ def mutate(kon): #edit_kon
     new_kon = list(kon)
     choice = random.randint(0,99)
     lines = math.floor(math.sqrt(random.randint(0, len(kon))))
-    if (choice < 39): #add
+    if (choice < 40): #add
         for _ in range(lines):
             new_kon.append(random.randint(0, len(commands)-1))
-    elif (choice < 69): #edit
+    elif (choice < 70): #edit
         for _ in range(lines):
             line = random.randint(0, len(new_kon)-1)
             new_kon[line] = random.randint(0, len(commands)-1)
-    elif (choice < 79): #delete
+    elif (choice < 80): #delete
         for _ in range(lines):
             if len(new_kon) > 1:
                 del new_kon[random.randint(0, len(new_kon)-1)]
